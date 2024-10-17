@@ -1,0 +1,134 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>flaco Jeans Clothing</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        
+        <section id="header">
+            <a href=""><img src="images/logo.jpg" height="35px" alt="logo" class="logo" ></a>
+    
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="collection.html">Our Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <a href="#" id="close" > <i class="far fa-times"></i></a>
+                </ul>
+            </div>
+    
+            <div id="mobile">
+                <!-- <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                <i id="bar" class="fas fa-outdent" onclick="toggleMenu()"> </i>
+            </div>
+    
+    
+        </section>
+    
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img src="images/limited1.jpg" width="100%" id="MainImg" alt="">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="images/limited1.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited2.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited3.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited1.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-pro-details">
+                <h6>Home /T-Shirt</h6>
+                <h4>Mens's Fashion T Shirt</h4>
+                <h2>R350.00</h2>
+                <select>
+                    <option>Select Size</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>Small</option>
+                    <option>Larger</option>
+                    <option>Medium</option>
+                </select>
+                <input type="number" value="1">
+                <button class="normal">Add To Cart</button>
+                <h4>Product Details</h4>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sunt exercitationem rerum sapiente nisi ad est culpa libero amet provident quaerat temporibus, eius esse magni laborum dolorem ipsum quia modi.</span>
+            </div>
+        </section>
+    
+        <footer class="section-p1">
+            <div class="col">
+                <img src="images/logo.jpg" alt="logo" height="35px" class="logo">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 000 Mentz Malesa, Street 00, Ga-Mamabolo</p>
+                <p><strong>Phone:</strong> +27 67 042 1694</p>
+                <p><strong>Deliveires:</strong> 2-3 working days, free local, R100 Outside Polokwane </p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i> 
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Collection</a>
+            </div>
+    
+            <div class="col">
+                <h4>My Acconut</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help </a>
+            </div>
+    
+            <div class="copyright">
+                <p>2024,flaco Jeans</p>
+            </div>
+        </footer>
+    
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function (){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function (){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function (){
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function (){
+            MainImg.src = smallimg[3].src;
+        }
+
+
+    </script>
+    
+        <script src="javascript/script.js">
+    
+        </script>
+    </body>
+    </html>
