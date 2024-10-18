@@ -46,88 +46,159 @@
             <thead>
                 <tr>
                     <td>Remove</td>
-                    <td>Image</td>
                     <td>Product</td>
                     <td>Price</td>
                     <td>Quantity</td>
                     <td>Subtotal</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href=""><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="images/limited1.jpg" alt=""></td>
-                    <td>Limited Edition</td>
-                    <td>R350.00</td>
-                    <td><input type="number" value="1"></td>
-                    <td>R700.00</td>
-                </tr>
+            <tbody id="cart-body">
+                <!-- Cart Items Will Be Dynamically Populated Here -->
             </tbody>
         </table>
-    </section>
-
-    <section cart="add" class="section-p1">
-        <div id="subtotal">
-            <h3>Cart Total</h3>
-            <table>
-                <tr>
-                    <td>Cart Subtotal</td>
-                    <td>R350.00</td>
-                </tr>
-                <tr>
-                    <td>Delivery</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td><strong>Table</strong></td>
-                    <td><strong>R350.00</strong></td>
-                </tr>
-            </table>
-            <button class="normal">Proceed to checkout</button>
-        </div>
-    </section>
+        
+        <section class="section-p1">
+            <div id="subtotal">
+                <h3>Cart Total</h3>
+                <table>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total-amount"><strong>R0.00</strong></td>
+                    </tr>
+                </table>
+            </div>
+        
+            <form id="checkout-form">
+                <h3>Delivery Details</h3>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="surname" placeholder="Surname" required>
+                <input type="tel" id="phone" placeholder="Phone" required>
+                <textarea id="address" placeholder="Delivery Address" rows="3" required></textarea>
+                <button type="submit" class="normal">Proceed to Checkout</button>
+            </form>
+        </section>
+        
+        
     
-    <footer class="section-p1">
-        <div class="col">
-            <img src="images/logo.jpg" alt="logo" height="35px" class="logo">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong> 000 Mentz Malesa, Street 00, Ga-Mamabolo</p>
-            <p><strong>Phone:</strong> +27 67 042 1694</p>
-            <p><strong>Deliveires:</strong> 2-3 working days, free local, R100 Outside Polokwane </p>
-            <div class="follow">
-                <h4>Follow Us</h4>
-                <div class="icon">
-                    <i class="fab fa-facebook-f"></i> 
-                    <i class="fab fa-instagram"></i>
+        <footer class="section-p1">
+            <div class="col">
+                <img src="images/logo.jpg" alt="logo" height="35px" class="logo" style="float: left; border-radius: 20px;">
+                <h4>Contact</h4>
+                <a href="https://maps.app.goo.gl/xCmrUs5QUh2kxeUT9"><strong><i class="fa-solid fa-location-dot"></i></strong> 000 Mentz Malesa, Street 00, Ga-Mamabolo</a>
+                
+    
+                <a href="tel:+27765668747"><strong><i class="fa-solid fa-phone"></i></strong>: +27 76 566 8747</a>
+                <p><strong><i class="fa-solid fa-truck"></i>:</strong> 2-3 working days, free local, R100 Outside Polokwane </p>
+                
+            </div>
+    
+            <div class="col">
+                <h4>About</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="collection.html">Our Collection</a>
+                <a href="cart.html">View Cart</a>
+            </div>
+    
+            <div class="col">
+                <div class="social-icons"> 
+                    <h4>Connect with us on:</h4>
+                    <a href="https://www.instagram.com/flaco_jeans_clothing"><i style="font-size: 40px;" class="fab fa-instagram" style="font-size: 40px;"></i></a>
+                    <a href="https://www.facebook.com/FlACO jeans clothing" style="font-size: 40px;"><i class="fab fa-facebook"></i></a>
+                   
+                    <a href="https://wa.me/+27765668747" target="_blank"><i  style="font-size: 40px;" class="fab fa-whatsapp"></i></a> <br>
+    
+                    <p>&copy; 2024 Flaco Jeans. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <h4>About</h4>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Our Collection</a>
-        </div>
-
-        <div class="col">
-            <h4>My Acconut</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help </a>
-        </div>
-
-        <div class="copyright">
-            <p>2024,flaco Jeans</p>
-        </div>
-    </footer>
+    
+            <!-- <div class="copyright"> -->
+                
+            <!-- </div> -->
+        </footer>
 
 
 
     <script src="javascript/script.js">
 
     </script>
+
+<script>
+   // Load Cart Items from LocalStorage
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartBody = document.getElementById('cart-body');
+const totalAmountElement = document.getElementById('total-amount');
+
+// Function to Render Cart Items
+function renderCart() {
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const row = `
+            <tr>
+                <td><a href="#" onclick="removeItem(${index})"><i class="far fa-times-circle"></i></a></td>
+                <td>${item.name}</td>
+                <td>R${item.price.toFixed(2)}</td>
+                <td>${item.quantity}</td>
+                <td>R${subtotal.toFixed(2)}</td>
+            </tr>
+        `;
+
+        cartBody.innerHTML += row;
+    });
+
+    totalAmountElement.innerHTML = `<strong>R${total.toFixed(2)}</strong>`;
+}
+
+// Function to Remove Item from Cart
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload(); // Reload page to reflect changes
+}
+
+// Handle Form Submission and WhatsApp Checkout
+document.getElementById('checkout-form').addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent page reload
+
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+
+    let message = `Order Summary:\n`;
+    let total = 0;
+
+    cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        message += `${item.name} - R${item.price} x ${item.quantity} = R${subtotal.toFixed(2)}\n`;
+    });
+
+    message += `\nTotal: R${total.toFixed(2)}\n\n`;
+    message += `Customer Details:\nName: ${name} ${surname}\nPhone: ${phone}\nAddress: ${address}`;
+
+    const whatsappURL = `https://wa.me/27765668747?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+});
+
+// Initialize Cart
+renderCart();
+ 
+
+
+    
+</script>
+
+
 </body>
 </html>

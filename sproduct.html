@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+        
     
     </head>
     <body>
@@ -52,22 +54,64 @@
             </div>
 
             <div class="single-pro-details">
-                <h6>Home /T-Shirt</h6>
-                <h4>Mens's Fashion T Shirt</h4>
-                <h2>R350.00</h2>
-                <select>
-                    <option>Select Size</option>
+                <h6>Home / T-Shirt</h6>
+                <h4 id="item-name">Men's Fashion T-Shirt</h4>
+                <h2 id="item-price">R350.00</h2>
+                <select id="size-selector">
+                    <option value="">Select Size</option>
                     <option>XL</option>
                     <option>XXL</option>
                     <option>Small</option>
-                    <option>Larger</option>
+                    <option>Large</option>
                     <option>Medium</option>
                 </select>
-                <input type="number" value="1">
-                <button class="normal">Add To Cart</button>
+                <input type="number" value="1" min="1" id="quantity">
+                <button class="normal" id="add-to-cart">Add To Cart</button>
+            
                 <h4>Product Details</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sunt exercitationem rerum sapiente nisi ad est culpa libero amet provident quaerat temporibus, eius esse magni laborum dolorem ipsum quia modi.</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             </div>
+            
+        </section>
+
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img src="images/limited2.jpg" width="100%" id="MainImg" alt="">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="images/limited1.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited2.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited3.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/limited1.jpg" width="100%" class="small-img" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-pro-details">
+                <h6>Home / T-Shirt</h6>
+                <h4 id="item-name">Men's Fashion T-Shirt</h4>
+                <h2 id="item-price">R350.00</h2>
+                <select id="size-selector">
+                    <option value="">Select Size</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>Small</option>
+                    <option>Large</option>
+                    <option>Medium</option>
+                </select>
+                <input type="number" value="1" min="1" id="quantity">
+                <button class="normal" id="add-to-cart">Add To Cart</button>
+            
+                <h4>Product Details</h4>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+            
         </section>
     
         <footer class="section-p1">
@@ -126,6 +170,31 @@
 
 
     </script>
+
+<script>
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+        const itemName = document.getElementById('item-name').textContent;
+        const itemPrice = parseFloat(document.getElementById('item-price').textContent.replace('R', ''));
+        const size = document.getElementById('size-selector').value;
+        const quantity = parseInt(document.getElementById('quantity').value);
+
+        if (!size) {
+            alert('Please select a size!');
+            return;
+        }
+
+        const cartItem = {
+            name: itemName,
+            price: itemPrice,
+            size: size,
+            quantity: quantity
+        };
+
+        localStorage.setItem('cart', JSON.stringify(cartItem));
+        window.location.href = 'collection.html'; // Redirect to Cart Page
+    });
+</script>
+
     
         <script src="javascript/script.js">
     
