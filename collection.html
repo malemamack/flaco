@@ -12,11 +12,110 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
+    <style>
+        h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Collection section styling */
+.section-p1 {
+    padding: 20px;
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product container */
+.pro-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Individual product styling */
+.pro {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pro:hover {
+    transform: translateY(-5px);
+}
+
+/* Product image */
+.pro img {
+    width: 100%;
+    height: auto;
+}
+
+/* Product description */
+.des {
+    padding: 15px;
+    text-align: center;
+}
+
+.des span {
+    color: #888;
+    font-size: 14px;
+}
+
+.des h5 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.des .star {
+    margin: 10px 0;
+}
+
+/* Styling for star ratings */
+.star i {
+    color: #FFD700; /* Gold color for filled stars */
+}
+
+.star i.far {
+    color: #ccc; /* Gray color for empty stars */
+}
+
+/* Product price */
+.des h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* View product button */
+.view-product {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.view-product button {
+    background-color: #007BFF; /* Bootstrap Primary Color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-product button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+    </style>
+
 </head>
 <body>
     
     <section id="header">
-        <a href=""><img src="images/logo.jpg" height="35px" alt="logo" class="logo" ></a>
+        <a href=""><img src="images/logo.jpg" height="35px" style="border-radius: 20px;" alt="logo" class="logo" ></a>
 
         <div>
             <ul id="navbar">
@@ -50,408 +149,16 @@
         <h2>Our Collection</h2>
       </div>
 
-    <section id="product1" class="section-p1">
-        
-        <div class="pro-container">
-            <div class="pro">
-                <!-- Fancybox Group for Product Images -->
-                <a data-fancybox="gallery" href="images/limited1.jpg">
-                    <img src="images/limited1.jpg" alt="Limited Edition">
-                </a>
-                <a data-fancybox="gallery" href="images/limited2.jpg"></a>
-                <a data-fancybox="gallery" href="images/limited3.jpg"></a>
-            
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#" onclick="addToCart('Limited Edition T-Shirt', 350)">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="pro">
-                <!-- Fancybox Group for Product Images -->
-                <a data-fancybox="gallery1" href="images/limited1.jpg">
-                    <img src="images/limited1.jpg" alt="Limited Edition">
-                </a>
-                <a data-fancybox="gallery1" href="images/limited2.jpg"></a>
-                <a data-fancybox="gallery1" href="images/limited3.jpg"></a>
-            
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#" onclick="addToCart('Limit Edition T-Shirt', 350)">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/limited3.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/limited1.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/limited2.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/limited3.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/1.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="images/limited1.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        
-            <div class="pro">
-                <img src="images/T1.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T2.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T3.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T4.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T5.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T6.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T7RED.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T8.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T9.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T10.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T11.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T12.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="pro">
-                <img src="images/T13.jpg" alt="Limited Edition">
-                <div class="des">
-                    <span>Flaco Jeans clothing</span>
-                    <h5>Limited Edition T-Shirt</h5>
-                    <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>R350</h4>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
+   
+      
 
-    </section>
+    <!-- Collection Section -->
+<section id="product-collection" class="section-p1">
+    <h2>Our Collection</h2>
+    <div class="pro-container" id="product-list">
+        <!-- Products will be dynamically populated here -->
+    </div>
+</section>
 
     <section id="pagination" class="section-p1">
         <a href="#">1</a>
@@ -501,6 +208,64 @@
 
     <script src="javascript/script.js">
 
+    </script>
+
+    <script>
+        // Example product data
+    const products = [
+        { id: 1, name: "Limited Edition T-Shirt", price: 350, image: "images/T10.jpg" },
+        { id: 2, name: "Casual Hoodie", price: 500, image: "images/t2.jpg" },
+    ];
+
+  // Fetch reviews from localStorage
+function getReviews() {
+    return JSON.parse(localStorage.getItem('reviews')) || {};
+}
+
+// Calculate average rating for a product
+function calculateAverageRating(reviews) {
+    if (!Array.isArray(reviews) || reviews.length === 0) return 0;
+    const totalStars = reviews.reduce((sum, review) => sum + (review.stars || 0), 0);
+    return totalStars / reviews.length;
+}
+
+// Render the products with average rating
+function renderProducts() {
+    const productList = document.getElementById('product-list');
+    const reviews = getReviews();
+
+    productList.innerHTML = products.map(product => {
+        const productReviews = reviews[product.id] || [];
+        const averageRating = calculateAverageRating(productReviews).toFixed(1);
+
+        // Generate stars based on the average rating
+        const stars = Array(5).fill(0).map((_, i) =>
+            i < Math.round(averageRating) ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>'
+        ).join('');
+
+        return `
+            <div class="pro">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="des">
+                    <span>Flaco Jeans Clothing</span>
+                    <h5>${product.name}</h5>
+                    <div class="star">${stars} (${averageRating})</div>
+                    <h4>R${product.price}</h4>
+                </div>
+                <a href="product-detail.html?id=${product.id}" class="view-product">
+                    <button>View Product</button>
+                </a>
+            </div>
+        `;
+    }).join('');
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', renderProducts);
+
+
+
+    
     </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

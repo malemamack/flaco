@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flaco Jeans Clothing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <style>
+        #small-img-group img {
+            cursor: pointer;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        #small-img-group img:hover {
+            transform: scale(1.1);
+        }
+
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .review-stars i {
+            color: gold;
+        }
+
+        /* Review Section Styles */
+        .review-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .review-item .star {
+            color: #FFD700; /* Gold color for stars */
+        }
+
+        #customer-name,
+        #review-text,
+        #customer-rating {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href=""><img src="images/logo.jpg" height="35px" alt="logo" class="logo"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="collection.html">Our Collection</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent" onclick="toggleMenu()"></i>
+        </div>
+    </section>
+
+    <!-- Product Detail Page HTML -->
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="" width="100%" id="MainImg" alt="Main Product Image">
+            <div class="small-img-group" id="small-img-group">
+                <!-- Small images will be populated here dynamically -->
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6>Home / T-Shirt</h6>
+            <h4 id="item-name"></h4>
+            <h2 id="item-price"></h2>
+            <select id="size-selector">
+                <option value="">Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+                <option>Medium</option>
+            </select>
+            <input type="number" value="1" min="1" id="quantity">
+            <button class="normal" id="add-to-cart">Add To Cart</button>
+
+            <h4>Product Details</h4>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            
+            <h4>Customer Reviews</h4>
+            <div id="reviews">
+                <!-- Existing reviews will be displayed here -->
+            </div>
+
+            <h4>Add a Review</h4>
+            <input type="text" id="customer-name" placeholder="Your Name" required>
+            <select id="customer-rating">
+                <option value="">Rate this product</option>
+                <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+                <option value="4">⭐️⭐️⭐️⭐️☆</option>
+                <option value="3">⭐️⭐️⭐️☆☆</option>
+                <option value="2">⭐️⭐️☆☆☆</option>
+                <option value="1">⭐️☆☆☆☆</option>
+            </select>
+            <textarea id="review-text" placeholder="Write your review..." required></textarea>
+            <button id="submit-review">Submit Review</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="images/logo.jpg" alt="logo" height="35px" class="logo">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 000 Mentz Malesa, Street 00, Ga-Mamabolo</p>
+            <p><strong>Phone:</strong> +27 67 042 1694</p>
+            <p><strong>Deliveries:</strong> 2-3 working days, free local, R100 Outside Polokwane</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Our Collection</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="copyright">
+            <p>2024, Flaco Jeans</p>
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve reviews from localStorage or initialize an empty object
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || {};
+
+        // Get product ID from URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Product Data for Demo (Normally from Backend/API)
+        const products = {
+            1: {
+                name: "Limited Edition T-Shirt",
+                price: 350,
+                category: "T-Shirt",
+                images: ["images/T10.jpg", "images/T10-1.jpg", "images/T10-2.jpg"]
+            },
+            2: {
+                name: "Casual Hoodie",
+                price: 500,
+                category: "Hoodie",
+                images: ["images/T5.jpg", "images/T8.jpg", "images/T9.jpg"]
+            }
+        };
+
+        // Populate Product Details
+        function populateProductDetails() {
+            const product = products[productId];
+
+            if (product) {
+                document.getElementById('item-name').textContent = product.name;
+                document.getElementById('item-price').textContent = `R${product.price}`;
+                document.getElementById('MainImg').src = product.images[0];
+
+                // Populate small images dynamically
+                const smallImgGroup = document.getElementById('small-img-group');
+                smallImgGroup.innerHTML = ''; // Clear previous images
+
+                product.images.forEach((imgSrc) => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+                    imgElement.width = 100;
+                    imgElement.addEventListener('click', () => {
+                        document.getElementById('MainImg').src = imgSrc;
+                    });
+                    smallImgGroup.appendChild(imgElement);
+                });
+            }
+        }
+
+        // Display Reviews for the Product
+        function displayReviews() {
+            const productReviews = reviews[productId] || [];
+            const reviewContainer = document.getElementById('reviews');
+            reviewContainer.innerHTML = ''; // Clear previous reviews
+
+            if (productReviews.length === 0) {
+                reviewContainer.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
+                return;
+            }
+
+            productReviews.forEach((review) => {
+                const reviewElement = document.createElement('div');
+                reviewElement.classList.add('review-item');
+                reviewElement.innerHTML = `
+                    <strong>${review.name}</strong>
+                    <div class="star">${'⭐'.repeat(review.rating)}</div>
+                    <p>${review.text}</p>
+                `;
+                reviewContainer.appendChild(reviewElement);
+            });
+        }
+
+        // Submit a Review
+        document.getElementById('submit-review').addEventListener('click', () => {
+            const name = document.getElementById('customer-name').value;
+            const rating = parseInt(document.getElementById('customer-rating').value);
+            const text = document.getElementById('review-text').value;
+
+            if (name && rating && text) {
+                // Add the new review to the reviews object
+                if (!reviews[productId]) {
+                    reviews[productId] = [];
+                }
+                reviews[productId].push({ name, rating, text });
+
+                // Save reviews to localStorage
+                localStorage.setItem('reviews', JSON.stringify(reviews));
+
+                // Clear the input fields
+                document.getElementById('customer-name').value = '';
+                document.getElementById('customer-rating').value = '';
+                document.getElementById('review-text').value = '';
+
+                // Display the updated reviews
+                displayReviews();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        // Initialize
+        window.onload = function() {
+            populateProductDetails();
+            displayReviews();
+        };
+
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+document.getElementById('add-to-cart').addEventListener('click', () => {
+    const itemName = document.getElementById('item-name').textContent;
+    const itemPrice = parseFloat(document.getElementById('item-price').textContent.replace('R', ''));
+    const size = document.getElementById('size-selector').value;
+    const quantity = parseInt(document.getElementById('quantity').value);
+
+    if (!size) {
+        alert('Please select a size.');
+        return;
+    }
+
+    const product = { name: itemName, price: itemPrice, size, quantity };
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`${quantity} ${itemName}(s) added to cart successfully!`);
+});
+    </script>
+</body>
+</html>

@@ -98,6 +98,10 @@ body{
     transition: 0.3s ease;
 }
 
+#close{
+    display: none;
+}
+
 #navbar li a:hover,
 #navbar li a.active{
     color: black;
@@ -489,11 +493,7 @@ footer a:hover{
 
 #about-app{
     display: flex;
- 
-}
-
-.our, video{
-    flex: 1;
+    
 }
 
 #about-app .our,
@@ -608,6 +608,10 @@ footer a:hover{
     -o-border-radius: 100px;
 }
 
+#contact-details .map iframe{
+    border-top-right-radius: 100px; border-bottom-right-radius: 100px;
+}
+
 .people{
    display: flex;
    padding: 20px;
@@ -617,6 +621,11 @@ footer a:hover{
    -moz-border-radius: 20px;
    -ms-border-radius: 20px;
    -o-border-radius: 20px;
+}
+
+.people img{
+    margin-left: 30px; margin-bottom: 10px; border-radius: 300px; border: 2px solid white; display: block;
+    height: 10%;
 }
 
 .people .bio{
@@ -642,9 +651,6 @@ footer a:hover{
     margin-left: 10px;
 }
 
-#contact-details .map iframe{
-    
-}
 .column{
     display: flex;
 }
@@ -675,6 +681,8 @@ footer a:hover{
     width: 150px;
     text-align: center;
 }
+
+
 
 #cart table td:nth-child(3){
     width: 250px;
@@ -766,9 +774,6 @@ footer a:hover{
       font-size: 80px;
 }
 
-.first{
-    display: flex;
-}
 
 
 
@@ -781,8 +786,32 @@ footer a:hover{
     
    
 
+    #about-app {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #about-app .our{
+        margin-left: -20px;
+    }
+
     #about-app .our1{
-        display: ;
+        margin-right: -20px;
+    }
+
+    #about-app video{
+        width: 90%;
+        margin: 10px;
+        display: block;
+        border-radius: 120px;
+}
+    #about-app .our, 
+    #about-app .our1{
+        width: 98%;
+        align-self: center;
+        
     }
     .carousel-inner img {
         margin-top: 0px; /* Adjust for smaller screens */
@@ -796,25 +825,66 @@ footer a:hover{
         font-weight: 900; 
         font-size: 60px;;
     }
+
+    #contact-details {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .people {
+        display: inline;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .people img{
+        height: auto;
+    }
+
+    #cart table {
+        width: 80%;
+    }
+
+    #contact-details .details{
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        width: 90%;
+}    
+
+    #contact-details .map iframe {
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        width: 90%;
+    }
     .section {
         padding: 40px 40px;
     }
     #navbar{
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        position: fixed;
+        position: absolute;
         top: 0;
-        right: -300px;
+        right: px;
         height: 100vh;
         width: 300px;
-        background-color: #E3E6F3;
+        background-color: rgba(0, 0, 0, 0.9);
         color: white; 
 
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
         padding: 80px 0 0 10px;
     }
+
+
+
+    
 
     
 
@@ -828,9 +898,16 @@ footer a:hover{
 
     #mobile{
         display: block;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10;
+        cursor: pointer;
+    }
+
+    #bar{
+        font-size: 24px;
+        color: white;
+    }
+
+    #navbar .open{
+        display: flex;
     }
 
 
@@ -865,6 +942,7 @@ footer a:hover{
         padding: 10px  30px;
     }
 
+    
     #hero {
         height: 70vh;
         padding: 0 20px;
@@ -906,4 +984,45 @@ footer a:hover{
     #prodetails .single-pro-details{
         width: 100%;
     }
+
+    .carousel-inner img {
+    margin-top: 0px; /* Adjust for smaller screens */
+    /* Ensure image covers the area without distortion */
+    }
+
+    .background-container{
+        margin-top: -250px;
+    }
+
+    .carousel-inner h2{
+    margin-top: 700px;
+    
+    color: black;
+    -webkit-text-stroke: 2px white; 
+    font-weight: 900; 
+    font-size: 30px;;
+    }
+
+    .carousel-inner h5{
+        margin-top: 700px;
+        color: black;
+        -webkit-text-stroke: 2px white; 
+        font-weight: 900; 
+        font-size: 30px;;
+        }
+
+        #carouselExampleDark{
+            
+
+        }
+
+        .letter h2 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 30px;
+        }
 }

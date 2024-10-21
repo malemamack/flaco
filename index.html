@@ -16,20 +16,18 @@
     <section id="header">
         <a href="" style="margin-left: 0px;"><img src="images/logo.jpg" style="border-radius: 20px; margin-left: 0;" height="35px" alt="logo" class="logo" ></a>
 
-        <div>
+        <div id="navbar-container">
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="collection.html">Our Collection</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <a href="#" id="close" > <i class="far fa-times"></i></a>
             </ul>
-        </div>
-
-        <div id="mobile" onclick="toggleMenu()">
-            <i id="bar" class="fas fa-outdent" > </i>
-        </div>
+            <!-- <a href="#" id="close"><i class="far fa-times"></i></a> -->
+            <div id="mobile" onclick="toggleMenu()">
+                <i id="bar" class="fas fa-bars"></i>
+            </div>
 
 
     </section>
@@ -125,10 +123,6 @@
     </section> -->
 
     <div class="background-container">
-        <!-- <div class="marquee">
-          <h2>flaco Jeans Clothing</h2>
-          
-        </div> -->
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -167,8 +161,8 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-      </div>
-      <div class="letter">
+    </div>
+    <div class="letter">
         <h2>Our Featured Collection</h2>
         <marquee bgcolor="black" loop="-1" scrollamount="5" width="30%">Flaco Jeans Clothing - Limited Edition Collection </marquee>
       </div>
@@ -621,5 +615,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 </body>
 </html>
