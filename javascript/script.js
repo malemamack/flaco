@@ -18,8 +18,3 @@ function toggleMenu() {
     navbar.classList.toggle('open');
 }
 
-
-
-
-
-
