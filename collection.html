@@ -12,11 +12,69 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
-
+    <style>
+        /* Header styling */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+      
+        #navbar {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+      
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+      
+        #mobile {
+            display: none;
+            cursor: pointer;
+        }
+      
+        #bar {
+            font-size: 24px;
+            color: white;
+        }
+      
+        /* Responsive Styles for Mobile */
+        @media (max-width: 799px) {
+            #navbar {
+                position: absolute;
+                top: 0;
+                left: -100%; /* Hide the menu initially */
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+            }
+      
+            #navbar.active {
+                left: 0; /* Slide the menu into view */
+            }
+      
+            #mobile {
+                display: block;
+            }
+        }
+      </style>
+      
 </head>
 <body>
     
-    <section id="header">
+    <!-- <section id="header">
         <a href=""><img src="images/logo.jpg" height="35px" style="border-radius: 20px;" alt="logo" class="logo" ></a>
 
         <div>
@@ -31,12 +89,33 @@
         </div>
 
         <div id="mobile">
-            <!-- <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> -->
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
             <i id="bar" class="fas fa-outdent" onclick="toggleMenu()"> </i>
         </div>
 
 
-    </section>
+    </section> -->
+
+    <!-- Header Section -->
+<section id="header">
+    <a href="#" style="margin-left: 0px;">
+        <img src="images/logo.jpg" style="border-radius: 20px;" height="35px" alt="logo" class="logo">
+    </a>
+
+    <div id="menu-container">
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a class="active" href="collection.html">Our Collection</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+
+        <div id="mobile">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</section>
 
     <section id="page-header" style="background-image: url(images/1a.jpg);">
         
@@ -108,66 +187,54 @@
 
     </script>
 
-    <script>
-        // Example product data
+<script>
     const products = [
-        { id: 1, name: "Limited Edition T-Shirt", price: 350, image: "images/T10.jpg" },
-        { id: 2, name: "Casual Hoodie", price: 500, image: "images/t2.jpg" },
-        { id: 3, name: "Hoodie", price: 350, image: "images/L222.jpg" },
-        { id: 4, name: "Long Sleeve T Shirt", price: 2500, image: "images/Limited2.jpg" },
-        { id: 2, name: " ", price: 500, image: "images/Limited3.jpg" },
+        { id: 1, name: "Limited Edition T-Shirt", price: 350, image: "images/LA1.jpg" },
+        { id: 2, name: "Limited Edition T-Shirt Black", price: 500, image: "images/LB1.jpg" },
+        { id: 7, name: "Limited Edition T-Shirt", price: 350, image: "images/L222.jpg" },
+        { id: 4, name: "Limited Edition T-Shirt Long Sleeve T Shirt", price: 250, image: "images/Limited2.jpg" }
     ];
 
-  // Fetch reviews from localStorage
-function getReviews() {
-    return JSON.parse(localStorage.getItem('reviews')) || {};
-}
+    function getReviews() {
+        return JSON.parse(localStorage.getItem('reviews')) || {};
+    }
 
-// Calculate average rating for a product
-function calculateAverageRating(reviews) {
-    if (!Array.isArray(reviews) || reviews.length === 0) return 0;
-    const totalStars = reviews.reduce((sum, review) => sum + (review.stars || 0), 0);
-    return totalStars / reviews.length;
-}
+    function calculateAverageRating(reviews) {
+        if (!reviews || reviews.length === 0) return 0;
+        const totalStars = reviews.reduce((sum, review) => sum + review.rating, 0);
+        return totalStars / reviews.length;
+    }
 
-// Render the products with average rating
-function renderProducts() {
-    const productList = document.getElementById('product-list');
-    const reviews = getReviews();
+    function renderProducts() {
+        const productList = document.getElementById('product-list');
+        const reviews = getReviews();
 
-    productList.innerHTML = products.map(product => {
-        const productReviews = reviews[product.id] || [];
-        const averageRating = calculateAverageRating(productReviews).toFixed(1);
+        productList.innerHTML = products.map(product => {
+            const productReviews = reviews[product.id] || [];
+            const averageRating = calculateAverageRating(productReviews).toFixed(1);
 
-        // Generate stars based on the average rating
-        const stars = Array(5).fill(0).map((_, i) =>
-            i < Math.round(averageRating) ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>'
-        ).join('');
+            const stars = Array(5).fill(0).map((_, i) =>
+                i < Math.round(averageRating) ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>'
+            ).join('');
 
-        return `
-            <div class="pro">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="des">
-                    <span>Flaco Jeans Clothing</span>
-                    <h5>${product.name}</h5>
-                    <div class="star">${stars} (${averageRating})</div>
-                    <h4>R${product.price}</h4>
-                </div>
-                <a href="product-detail.html?id=${product.id}" class="view-product">
-                    <button>View Product</button>
-                </a>
-            </div>
-        `;
-    }).join('');
-}
+            return `
+                <div class="pro">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="des">
+                        <span>Flaco Jeans Clothing</span>
+                        <h5>${product.name}</h5>
+                        <div class="star">${stars} (${averageRating})</div>
+                        <h4>R${product.price}</h4>
+                    </div>
+                    <a href="product-detail.html?id=${product.id}">
+                        <button>View Product</button>
+                    </a>
+                </div>`;
+        }).join('');
+    }
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', renderProducts);
-
-
-
-    
-    </script>
+    document.addEventListener('DOMContentLoaded', renderProducts);
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 

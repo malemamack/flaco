@@ -869,8 +869,6 @@ footer a:hover{
 
 
 
-
-
 /* responsive  */
 @media(max-width:799px){
 
@@ -957,21 +955,25 @@ footer a:hover{
         padding: 40px 40px;
     }
     #navbar{
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        position: absolute;
+        position: fixed;
         top: 0;
-        right: px;
+        right: -300px;
         height: 100vh;
         width: 300px;
         background-color: rgba(0, 0, 0, 0.9);
-        color: white; 
-
+        color: white;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
         padding: 80px 0 0 10px;
-    }
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+}
 
 
 
@@ -988,7 +990,7 @@ footer a:hover{
     }
 
     #mobile{
-        display: block;
+        display: flex;
         cursor: pointer;
     }
 
@@ -1003,7 +1005,7 @@ footer a:hover{
 
 
 
-    #mobile .icon{
+    #mobile .i{
         color: white;
         font-size: 24px;
         padding-right: 20px;

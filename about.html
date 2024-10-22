@@ -12,33 +12,109 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
-    
+    <style>
+        /* Header styling */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+      
+        #navbar {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+      
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+      
+        #mobile {
+            display: none;
+            cursor: pointer;
+        }
+      
+        #bar {
+            font-size: 24px;
+            color: white;
+        }
+      
+        /* Responsive Styles for Mobile */
+        @media (max-width: 799px) {
+            #navbar {
+                position: absolute;
+                top: 60px;
+                left: -100%; /* Hide the menu initially */
+                width: 100%;
+                height: 100vh;
+                background-color: #333;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+            }
+      
+            #navbar.active {
+                left: 0; /* Slide the menu into view */
+            }
+      
+            #mobile {
+                display: block;
+            }
+        }
+      </style>
+      
 
 </head>
 <body>
     
-    <section id="header">
-        <a href=""><img src="images/logo.jpg" height="35px" style="border-radius: 20px;" alt="logo" class="logo" ></a>
-
-        <div>
+    <!-- <section id="header">
+        <a href="#" style="margin-left: 0px;">
+            <img src="images/logo.jpg" style="border-radius: 20px;" height="35px" alt="logo" class="logo">
+        </a>
+    
+        <div id="menu-container">
             <ul id="navbar">
                 <li><a  href="index.html">Home</a></li>
                 <li><a href="collection.html">Our Collection</a></li>
                 <li><a class="active" href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <a href="#" id="close" > <i class="far fa-times"></i></a>
             </ul>
+    
+            <div id="mobile">
+                <i id="bar" class="fa-solid fa-bars"></i>
+            </div>
         </div>
+    </section> -->
+    <!-- Header Section -->
+<section id="header">
+    <a href="#" style="margin-left: 0px;">
+        <img src="images/logo.jpg" style="border-radius: 20px;" height="35px" alt="logo" class="logo">
+    </a>
+
+    <div id="menu-container">
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a href="collection.html">Our Collection</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
 
         <div id="mobile">
-            <!-- <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> -->
-            <i id="bar" class="fas fa-outdent" onclick="toggleMenu()"> </i>
+            <i id="bar" class="fa-solid fa-bars"></i>
         </div>
-
-
-    </section>
-
+    </div>
+</section>
+    
     <section id="page-header" class="about-header" style="background-image: url(images/1a.jpg);">
         
     </div>
