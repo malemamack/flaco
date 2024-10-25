@@ -8,69 +8,7 @@
     
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-
-    <style>
-        /* Header styling */
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-        }
-      
-        #navbar {
-            display: flex;
-            list-style: none;
-            gap: 15px;
-        }
-      
-        #navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-      
-        #mobile {
-            display: none;
-            cursor: pointer;
-        }
-      
-        #bar {
-            font-size: 24px;
-            color: white;
-        }
-      
-        /* Responsive Styles for Mobile */
-        @media (max-width: 799px) {
-            #navbar {
-                position: absolute;
-                top: 0;
-                left: -100%; /* Hide the menu initially */
-                width: 100%;
-                height: 100vh;
-                background-color: #333;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.3s;
-            }
-      
-            #navbar.active {
-                left: 0; /* Slide the menu into view */
-            }
-      
-            #mobile {
-                display: block;
-            }
-        }
-      </style>
-      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />      
 </head>
 <body>
     
@@ -96,7 +34,7 @@
 
     </section> -->
 
-    <!-- Header Section -->
+
 <section id="header">
     <a href="#" style="margin-left: 0px;">
         <img src="images/logo.jpg" style="border-radius: 20px;" height="35px" alt="logo" class="logo">
@@ -105,7 +43,7 @@
     <div id="menu-container">
         <ul id="navbar">
             <li><a  href="index.html">Home</a></li>
-            <li><a class="active" href="collection.html">Our Collection</a></li>
+            <li><a class="active" href="collection.html">Collection</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -117,18 +55,18 @@
     </div>
 </section>
 
-    <section id="page-header" style="background-image: url(images/1a.jpg);">
+<section id="page-header" style="background-image: url(images/1a.jpg);">
         
-        </div>
-        <h2>Flaco Jeans Clothing</h2>
-        <h1>True Style Never Dies</h1>
-        <p>SOUTH AFRICAN BRAND</p>
+    </div>
+    <h2>Flaco Jeans Clothing</h2>
+    <h1>True Style Never Dies</h1>
+    <p>SOUTH AFRICAN BRAND</p>
         
-    </section>
+</section>
 
-    <div class="letter">
-        <h2>Our Collection</h2>
-      </div>
+<div class="letter">
+        <h2>Collection</h2>
+</div>
 
     <!-- Collection Section -->
 <section id="product-collection" class="section-p1">
@@ -137,13 +75,12 @@
     </div>
 </section>
 
-    <section id="pagination" class="section-p1">
-        <a href="#">1</a>
+<section id="pagination" class="section-p1">
+        <a class="active" href="#">1</a>
         <a href="#">2</a>
-        <a href="#"><i class="fas fa-arrow-right"></i></a>
-    </section>
+</section>
 
-    <footer class="section-p1">
+<footer class="section-p1">
         <div class="col">
             <img src="images/logo.jpg" alt="logo" height="35px" class="logo" style="float: left; border-radius: 20px;">
             <h4>Contact</h4>
@@ -175,24 +112,30 @@
                 <p>&copy; 2024 Flaco Jeans. All rights reserved.</p>
             </div>
         </div>
-
-        <!-- <div class="copyright"> -->
-            
-        <!-- </div> -->
-    </footer>
+</footer>
 
 
 
-    <script src="javascript/script.js">
-
-    </script>
+<script src="javascript/script.js"></script>
 
 <script>
     const products = [
-        { id: 1, name: "Limited Edition T-Shirt", price: 350, image: "images/LA1.jpg" },
-        { id: 2, name: "Limited Edition T-Shirt Black", price: 500, image: "images/LB1.jpg" },
-        { id: 7, name: "Limited Edition T-Shirt", price: 350, image: "images/L222.jpg" },
-        { id: 4, name: "Limited Edition T-Shirt Long Sleeve T Shirt", price: 250, image: "images/Limited2.jpg" }
+    { id: 1, name: "Limited Edition White T-Shirt", price: 350, image: "images/wwhite1.jpg" },
+        { id: 2, name: "Limited Edition T-Shirt Black", price: 350, image: "images/LB2.jpg"},
+        { id: 3, name: "Limited Edition T-Shirt ", price: 350, image: "images/L222.jpg" },
+        { id: 4, name: "Casual Hoodie ", price: 500, image: "images/HoodieM.jpg" },
+        { id: 5, name: "Flaco Jeans Clothing - Hat", price: 150, image: "images/hat1.jpg" },
+        { id: 6, name: "Flaco Jeans Clothing - Green Essential", price: 650, image: "images/GREEN.jpg" },
+        { id: 7, name: "Brown Essentials ", price: 650, image: "images/brown1.jpg" },
+        { id: 8, name: " Black - Essentials ", price: 650, image: "images/BE2.jpg" },
+        { id: 9, name: "Flaco Jeans Clothing - Black T-Shirt", price: 350, image: "images/TB1.jpg" },
+        { id: 10, name: "Flaco Jeans Clothing - Black & White Stripes", price: 350, image: "images/TSBW1.jpg" },
+        { id: 11, name: "Flaco Jeans Clothing - White T-Shirt ", price: 350, image: "images/TW3.jpg" },
+        { id: 12, name: " Flaco Jeans Clothing - White Red ", price: 350, image: "images/T7RED.jpg" },
+        { id: 13, name: " Flaco Jeans Clothing - Ladies Hoodie ", price: 500, image: "images/hoodie2.jpg" },
+        { id: 14, name: " Flaco Jeans Clothing - Long Sleeve T-Shirt ", price: 350, image: "images/LongT.jpg" },
+        { id: 15, name: " Flaco Jeans Clothing - Long Sleeve Red T-Shirt ", price: 350, image: "images/Long3.jpg" },
+        { id: 16, name: " Flaco Jeans Clothing - White T-Shirt ", price: 350, image: "images/ww1.jpg" },
     ];
 
     function getReviews() {
@@ -226,7 +169,7 @@
                         <div class="star">${stars} (${averageRating})</div>
                         <h4>R${product.price}</h4>
                     </div>
-                    <a href="product-detail.html?id=${product.id}">
+                    <a href="product-detail.html?id=${product.id}" class="view-product">
                         <button>View Product</button>
                     </a>
                 </div>`;
@@ -238,8 +181,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 </body>
 </html>

@@ -9,67 +9,7 @@
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-
-    <style>
-        /* Header styling */
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-        }
-      
-        #navbar {
-            display: flex;
-            list-style: none;
-            gap: 15px;
-        }
-      
-        #navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-      
-        #mobile {
-            display: none;
-            cursor: pointer;
-        }
-      
-        #bar {
-            font-size: 24px;
-            color: white;
-        }
-      
-        /* Responsive Styles for Mobile */
-        @media (max-width: 799px) {
-            #navbar {
-                position: absolute;
-                top: 0;
-                left: -100%; /* Hide the menu initially */
-                width: 100%;
-                height: 100vh;
-                background-color: #333;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.3s;
-            }
-      
-            #navbar.active {
-                left: 0; /* Slide the menu into view */
-            }
-      
-            #mobile {
-                display: block;
-            }
-        }
-      </style>
 
 </head>
 <body>
@@ -105,7 +45,7 @@
     <div id="menu-container">
         <ul id="navbar">
             <li><a  href="index.html">Home</a></li>
-            <li><a  href="collection.html">Our Collection</a></li>
+            <li><a  href="collection.html">Collection</a></li>
             <li><a href="about.html">About</a></li>
             <li><a  href="contact.html">Contact</a></li>
             <li><a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -117,16 +57,16 @@
     </div>
 </section>
 
-    <section id="page-header" class="about-header" style="background-image: url(images/1a.jpg);">
+<section id="page-header" class="about-header" style="background-image: url(images/1a.jpg);">
         
     </div>
     <h2>#Your Shopping Cart</h2>
     <h1>Cart Summary Section!</h1>
     <p>Review your items below before proceeding to checkout. Adjust quantities if needed, and make sure everything looks good!</p>
     
-    </section>
+</section>
 
-    <section id="cart" class="section-p1">
+<section id="cart" class="section-p1">
         <div id="empty-cart-message">
             <p>Your cart is empty. <a href="index.html">Home</a></p>
             <a href="collection.html" class="browser-btn">Browse Our Collection</a>
@@ -168,10 +108,10 @@
                 <button type="submit" class="normal">Proceed to Checkout</button>
             </form>
         </section>
-    </section>
+</section>
     
     
-    <footer class="section-p1" >
+<footer class="section-p1" >
             <div class="col">
                 <img src="images/logo.jpg" alt="logo" height="35px" class="logo" style="float: left; border-radius: 20px;">
                 <h4>Contact</h4>
@@ -207,13 +147,11 @@
             <!-- <div class="copyright"> -->
                 
             <!-- </div> -->
-    </footer>
+</footer>
 
+<script src="javascript/script.js"></script>
 
-
-    <script src="javascript/script.js"></script>
-
-    <script>
+<script>
 // Retrieve cart from localStorage or initialize an empty array
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -239,7 +177,7 @@ function updateCart() {
 
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td><button onclick="removeItem(${index})">Remove</button></td>
+            <td><button onclick="removeItem(${index})"><i class="fa-solid fa-minus"></i></button></td>
             <td>
                 <a href="product-detail.html?id=${encodeURIComponent(item.id)}">
                     <img src="${item.image}" width="50" alt="${item.name}">
@@ -316,15 +254,13 @@ document.getElementById('checkout-form').addEventListener('submit', function (e)
 
 // Initialize cart on page load
 updateCart();
-    </script>
+</script>
 
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
 </body>
 </html>

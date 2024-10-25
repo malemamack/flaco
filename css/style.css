@@ -65,7 +65,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px  45px;
+    /* padding: 5px  45px; */
     background: #E3E6F3;
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
@@ -73,12 +73,17 @@ body{
     position: sticky;
     top: 0;
     left: 0;
+    display: flex;
+    padding: 10px 20px;
+    color: white;
 }
 
 #navbar{
     display: flex;
     align-items: center;
     justify-content: center;
+    list-style: none;
+    gap: 15px;
 }
 
 #navbar .active{
@@ -125,7 +130,14 @@ body{
 #mobile{
     display: none;
     align-items: center;
+    cursor: pointer;
 }
+
+#bar {
+    font-size: 24px;
+    color: white;
+}
+
 /* home page */
 #carouselExampleDark {
     height: 85vh;
@@ -388,6 +400,18 @@ footer a:hover{
     border-radius: 4px;
     font-weight: 700;
 }
+
+#pagination a:hover{
+    background-color: white;
+    color: black;
+    border: 2px black;
+}
+
+#pagination .active a{
+    background-color: white;
+    color: black;
+    
+} 
 
 #pagination a i{
     font-size: 16px;
@@ -773,8 +797,6 @@ footer a:hover{
     text-align: center;
 }
 
-
-
 #cart table td:nth-child(3){
     width: 250px;
     text-align: center;
@@ -865,15 +887,16 @@ footer a:hover{
       font-size: 80px;
 }
 
+#prodetails #MainImg{
+    width: 100%;
+}
+
 
 
 
 
 /* responsive  */
 @media(max-width:799px){
-
-    
-   
 
     #about-app {
         display: inline;
@@ -894,7 +917,11 @@ footer a:hover{
         width: 90%;
         margin: 10px;
         display: block;
-        border-radius: 120px;
+        border-radius: 225px;
+        -webkit-border-radius: 225px;
+        -moz-border-radius: 225px;
+        -ms-border-radius: 225px;
+        -o-border-radius: 225px;
 }
     #about-app .our, 
     #about-app .our1{
@@ -955,34 +982,29 @@ footer a:hover{
         padding: 40px 40px;
     }
     #navbar{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
+        
         background-color: rgba(0, 0, 0, 0.9);
         color: white;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
         padding: 80px 0 0 10px;
+        position: absolute;
+        top: 0;
+        left: -100%; /* Hide the menu initially */
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         transition: 0.3s;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -ms-transition: 0.3s;
-        -o-transition: 0.3s;
 }
 
-
-
-    
-
-    
-
     #navbar .active{
-        right: 0;
+        left: 0;
+    }
+
+    #navbar.active {
+        left: 0; /* Slide the menu into view */
     }
 
     #navbar li{
@@ -990,8 +1012,8 @@ footer a:hover{
     }
 
     #mobile{
-        display: flex;
-        cursor: pointer;
+        display: block;
+
     }
 
     #bar{
@@ -1088,12 +1110,12 @@ footer a:hover{
     }
 
     .carousel-inner h2{
-    margin-top: 700px;
+    margin-top: -600px;
     
     color: black;
     -webkit-text-stroke: 2px white; 
     font-weight: 900; 
-    font-size: 30px;;
+    font-size: 30px ;
     }
 
     .carousel-inner h5{
@@ -1101,7 +1123,7 @@ footer a:hover{
         color: black;
         -webkit-text-stroke: 2px white; 
         font-weight: 900; 
-        font-size: 30px;;
+        font-size: 1.2rem;
         }
 
         .letter h2 {
@@ -1113,4 +1135,55 @@ footer a:hover{
             font-weight: 700;
             font-size: 30px;
         }
+
+        footer {
+            flex-direction: column;
+        }
+
+        #prodetails #MainImg {
+            width: 70%;
+        }
+
+        #prodetails #small-img-group{
+            width: 40%;
+        }
+
+        #customer-name,
+        #review-text,
+        #customer-rating{
+            width: 70%;
+        }
+
+        #about-head {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about-head img {
+            width: 100%;
+            height: 70vh;
+            border-radius: 515px;
+            -webkit-border-radius: 515px;
+            -moz-border-radius: 515px;
+            -ms-border-radius: 515px;
+            -o-border-radius: 515px;
+}
+}
+
+@media (max-width:1600px){
+    footer {
+       width: 100%;
+       padding: 0px;
+    }
+
+    .carousel-inner img{
+        margin-right: 160px;
+    }
+
+    .carousel-inner h4{
+        margin-top: 0px;
+    }
+
+   
+
 }

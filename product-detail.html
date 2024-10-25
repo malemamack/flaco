@@ -7,67 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-
-    
     <style>
-        /* Header styling */
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
+        body{
+            width: 100%;
         }
-      
-        #navbar {
-            display: flex;
-            list-style: none;
-            gap: 15px;
-        }
-      
-        #navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-      
-        #mobile {
-            display: none;
-            cursor: pointer;
-        }
-      
-        #bar {
-            font-size: 24px;
-            color: white;
-        }
-      
-        /* Responsive Styles for Mobile */
-        @media (max-width: 799px) {
-            #navbar {
-                position: absolute;
-                top: 0;
-                left: -100%; /* Hide the menu initially */
-                width: 100%;
-                height: 100vh;
-                background-color: #333;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.3s;
-            }
-      
-            #navbar.active {
-                left: 0; /* Slide the menu into view */
-            }
-      
-            #mobile {
-                display: block;
-            }
-        }
-      </style>
-    <style>
         #small-img-group img {
             cursor: pointer;
             margin: 5px;
@@ -141,7 +84,7 @@
     <div id="menu-container">
         <ul id="navbar">
             <li><a  href="index.html">Home</a></li>
-            <li><a class="active" href="collection.html">Our Collection</a></li>
+            <li><a class="active" href="collection.html">Collection</a></li>
             <li><a href="about.html">About</a></li>
             <li><a  href="contact.html">Contact</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -156,7 +99,7 @@
 
 <section id="prodetails" class="section-p1">
     <div class="single-pro-image">
-        <img src="" width="100%" id="MainImg" alt="Main Product Image">
+        <img src="" id="MainImg" alt="Main Product Image">
         <div class="small-img-group" id="small-img-group"></div>
     </div>
 
@@ -197,7 +140,7 @@
 </section>
 
 
-    <footer class="section-p1">
+<footer class="section-p1">
         <div class="col">
             <img src="images/logo.jpg" alt="logo" height="35px" class="logo" style="float: left; border-radius: 20px;">
             <h4>Contact</h4>
@@ -233,10 +176,10 @@
         <!-- <div class="copyright"> -->
             
         <!-- </div> -->
-    </footer>
+</footer>
 
-    <script>
-       // Retrieve reviews from localStorage or initialize an empty object
+<script>
+     // Retrieve reviews from localStorage or initialize an empty object
 const reviews = JSON.parse(localStorage.getItem('reviews')) || {};
 
 // Get product ID from URL query parameters
@@ -245,10 +188,22 @@ const productId = urlParams.get('id');
 
 // Product Data for Demo (Normally from Backend/API)
 const products = {
-    1: { name: "Limited Edition T-Shirt", price: 350, category: "T-Shirt", images: ["images/LA1.jpg", "images/LA2.jpg"] },
+    1: { name: "Limited Edition White T-Shirt", price: 350, category: "T-Shirt", images: ["images/wwhite1.jpg", "images/TW2.jpg", "images/TW2.jpg"] },
     2: { name: "Limited Edition T-Shirt Black", price: 350, category: "T-Shirt", images: ["images/LB1.jpg", "images/LB2.jpg"] },
-    7: { name: "Limited Edition T-Shirt", price: 350, category: "T-Shirt", images: ["images/L222.jpg", "images/L22.jpg"] },
-    4: { name: "Limited Edition Long Sleeve T-Shirt", price: 350, category: "T-Shirt", images: ["images/Limited2.jpg", "images/Limited3.jpg"] },
+    3: { name: "Limited Edition T-Shirt", price: 350, category: "T-Shirt", images: ["images/L222.jpg", "images/L22.jpg"] },
+    4: { name: "Exclusive Black T-Shirt", price: 350, category: "T-Shirt", images: ["images/ex1.jpg", "images/ex2.jpg"] },
+    5: { name: "Flaco Jeans Clothing - Hat", price: 350, category: "T-Shirt", images: ["images/hat1.jpg", "images/hat11.jpg"] },
+    6: { name: "Flaco Jeans Clothing - Green Essential", price: 350, category: "T-Shirt", images: ["images/GREEN.jpg", "images/GREEN1.jpg"] },
+    7: { name: "Brown - Essentials", price: 350, category: "T-Shirt", images: ["images/brown1.jpg", "images/brown2.jpg"] },
+    8: { name: "Black - Essentials ", price: 350, category: "T-Shirt", images: ["images/BE2.jpg", "images/BE33.jpg", "images/BE22.jpg"] },
+    9: { name: "Flaco Jeans Clothing - Black T-Shirt", price: 350, category: "T-Shirt", images: ["images/TB1.jpg", "images/TB2.jpg"] },
+    10: { name: "Flaco Jeans Clothing - Black & White Stripes", price: 350, category: "T-Shirt", images: ["images/TSBW1.jpg", "images/TSBW2.jpg"] },
+    11: { name: "Flaco Jeans Clothing - White T-Shirt", price: 350, category: "T-Shirt", images: ["images/TW3.jpg", "images/TW1.jpg", "images/TW2.jpg"] },
+    12: { name: "Flaco Jeans Clothing - White Red", price: 350, category: "T-Shirt", images: ["images/T7RED.jpg", "images/T7RED.jpg"] },
+    13: { name: "Flaco Jeans Clothing - Ladies Hoodie", price: 350, category: "T-Shirt", images: ["images/hoodie2.jpg", "images/hoodieL.jpg", "images/.jpg"] },
+    14: { name: " Flaco Jeans Clothing - Long Sleeve T-Shirt", price: 350, category: "T-Shirt", images: ["images/LongT.jpg", "images/LongT.jpg"] },
+    15: { name: " Flaco Jeans Clothing - Long Sleeve Red T-Shirt", price: 350, category: "T-Shirt", images: ["images/Long3.jpg", "images/Long1.jpg"] },
+    16: { name: " Flaco Jeans Clothing - White T-Shirt", price: 350, category: "T-Shirt", images: ["images/ww1.jpg", "images/ww2.jpg"] },
 };
 
 // Populate Product Details
@@ -278,6 +233,53 @@ function populateProductDetails() {
     }
 }
 
+// Display Reviews
+function displayReviews() {
+    const productReviews = reviews[productId] || [];
+    const reviewsDiv = document.getElementById('reviews');
+    reviewsDiv.innerHTML = '';
+
+    if (productReviews.length > 0) {
+        productReviews.forEach((review) => {
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerHTML = `
+                <h5>${review.name} - ${'⭐️'.repeat(review.rating)}</h5>
+                <p>${review.text}</p>
+            `;
+            reviewsDiv.appendChild(reviewElement);
+        });
+    } else {
+        reviewsDiv.innerHTML = '<p>No reviews yet. Be the first to review this product!</p>';
+    }
+}
+
+// Add Review
+document.getElementById('submit-review').addEventListener('click', () => {
+    const name = document.getElementById('customer-name').value.trim();
+    const rating = parseInt(document.getElementById('customer-rating').value);
+    const text = document.getElementById('review-text').value.trim();
+
+    if (!name || !rating || !text) {
+        alert('Please fill in all fields and provide a rating.');
+        return;
+    }
+
+    const newReview = { name, rating, text };
+    if (!reviews[productId]) reviews[productId] = [];
+    reviews[productId].push(newReview);
+
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+
+    alert('Review submitted successfully!');
+    displayReviews();
+
+    // Clear input fields
+    document.getElementById('customer-name').value = '';
+    document.getElementById('customer-rating').value = '';
+    document.getElementById('review-text').value = '';
+});
+
 // Add to Cart
 document.getElementById('add-to-cart').addEventListener('click', () => {
     const itemName = document.getElementById('item-name').textContent;
@@ -305,10 +307,9 @@ window.onload = function () {
     displayReviews();
 };
 
-    </script>
+</script>
 
-    
+<script src="javascript/script.js"></script>
 
-    <script src="javascript/script.js"></script>
 </body>
 </html>
