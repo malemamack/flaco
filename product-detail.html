@@ -116,16 +116,21 @@
             <option>Medium</option>
         </select>
         <input type="number" value="1" min="1" id="quantity">
-        <button class="normal" id="add-to-cart">Add To Cart</button>
+        <button class="normal" style="background-color: black; /* Bootstrap Primary Color */
+        color: white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;"   id="add-to-cart">Add To Cart</button>
 
         <h4>Product Details</h4>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <span>A timeless piece designed for both comfort and durability.</span>
 
-        <h4>Customer Reviews</h4>
+        <!-- <h4>Customer Reviews</h4> -->
         <div id="reviews"></div>
 
         <h4>Add a Review</h4>
-        <input type="text" id="customer-name" placeholder="Your Name" required>
+        <input type="text" id="customer-name" placeholder="Your Name" style="width: 300px;" required>
         <select id="customer-rating">
             <option value="">Rate this product</option>
             <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
@@ -135,7 +140,7 @@
             <option value="1">⭐️☆☆☆☆</option>
         </select>
         <textarea id="review-text" placeholder="Write your review..." required></textarea>
-        <button id="submit-review">Submit Review</button>
+        <button class="normal" id="submit-review">Submit Review</button>
     </div>
 </section>
 
@@ -188,9 +193,9 @@ const productId = urlParams.get('id');
 
 // Product Data for Demo (Normally from Backend/API)
 const products = {
-    1: { name: "Limited Edition White T-Shirt", price: 350, category: "T-Shirt", images: ["images/wwhite1.jpg", "images/TW2.jpg", "images/TW2.jpg"] },
+    1: { name: "Exclusive Graphic T Shirt", price: 500, category: "T-Shirt", images: ["images/gra1.jpg", "images/ex1.jpg"] },
     2: { name: "Limited Edition T-Shirt Black", price: 350, category: "T-Shirt", images: ["images/LB1.jpg", "images/LB2.jpg"] },
-    3: { name: "Limited Edition T-Shirt", price: 350, category: "T-Shirt", images: ["images/L222.jpg", "images/L22.jpg"] },
+    3: { name: "Exclusive Graphic T Shirt", price: 500, category: "T-Shirt", images: ["images/exc1.jpg", "images/ex1.jpg"] },
     4: { name: "Exclusive Black T-Shirt", price: 350, category: "T-Shirt", images: ["images/ex1.jpg", "images/ex2.jpg"] },
     5: { name: "Flaco Jeans Clothing - Hat", price: 350, category: "T-Shirt", images: ["images/hat1.jpg", "images/hat11.jpg"] },
     6: { name: "Flaco Jeans Clothing - Green Essential", price: 350, category: "T-Shirt", images: ["images/GREEN.jpg", "images/GREEN1.jpg"] },

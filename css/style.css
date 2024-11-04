@@ -121,7 +121,7 @@ body{
     content: "";
     width: 30px;
     height: 2px;
-    background: #088178;
+    background: white;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -201,7 +201,7 @@ body{
     border-bottom-left-radius: 20px;
 }
 
-#product1 .pro-container{
+/* #product1 .pro-container{
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
@@ -267,7 +267,7 @@ body{
     font-weight: 500;
     color: #088178;
     border: 1px solid #cce7d0;
-}
+} */
 
 #banner{
     display: flex;
@@ -419,7 +419,7 @@ footer a:hover{
 }
 
 
-/* single product */
+
 
 /* Collection section styling */
 .section-p1 {
@@ -464,7 +464,7 @@ footer a:hover{
 }
 
 .des span {
-    color: #888;
+    color: white;
     font-size: 14px;
 }
 
@@ -498,6 +498,7 @@ footer a:hover{
     text-align: center;
     margin-bottom: 15px;
     justify-content: center;
+    justify-items: center;
 }
 
 .view-product button {
@@ -507,12 +508,23 @@ footer a:hover{
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.pro a{
+    justify-items: center;
+    align-items: center;
     text-align: center;
     justify-content: center;
+    display: block;
 }
 
 .view-product button:hover {
-    background-color: #088178; /* Darker shade for hover */
+    background-color: white; 
+    color: black;
+}
+
+  .normal:hover {
+    background-color: white; 
     color: black;
 }
  
@@ -856,9 +868,10 @@ footer a:hover{
 }
 
 #checkout-form button:hover{
-    background-color: #cce7d0;
+    background-color: white;
     color: #111111;
     padding: 12px;
+    border: 5px black;
 }
 
 #subtotal button{
