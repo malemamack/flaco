@@ -502,7 +502,7 @@ footer a:hover{
 }
 
 .view-product button {
-    background-color: black; /* Bootstrap Primary Color */
+    background-color: black; 
     color: white;
     border-radius: 5px;
     padding: 10px 15px;
@@ -783,6 +783,11 @@ footer a:hover{
 }
 
 
+
+
+
+
+
 /* cart page style */
 #cart{
     overflow-x: auto;
@@ -867,12 +872,12 @@ footer a:hover{
     font-size: 13px;
 }
 
-#checkout-form button:hover{
+/* #checkout-form button:hover{
     background-color: white;
     color: #111111;
     padding: 12px;
     border: 5px black;
-}
+} */
 
 #subtotal button{
     padding: 12px 15px;
@@ -918,14 +923,6 @@ footer a:hover{
         text-align: center;
     }
 
-    #about-app .our{
-        margin-left: -20px;
-    }
-
-    #about-app .our1{
-        margin-right: -20px;
-    }
-
     #about-app video{
         width: 90%;
         margin: 10px;
@@ -938,8 +935,8 @@ footer a:hover{
 }
     #about-app .our, 
     #about-app .our1{
-        width: 98%;
-        align-self: center;
+        width: 95%;
+        margin: 10px;
         
     }
     .carousel-inner img {
@@ -963,11 +960,16 @@ footer a:hover{
 
     .people {
         display: inline;
-        background-color: rgba(0, 0, 0, 0.9);
+        background:none;        
     }
 
+    .people .bio{
+        margin-left: -7px;
+    }
     .people img{
         height: auto;
+        width: 100%;
+        margin-left: -7px;
     }
 
     #cart table {
@@ -980,8 +982,8 @@ footer a:hover{
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
-        width: 90%;
-}    
+        width: 100%;
+}       
 
     #contact-details .map iframe {
         border-radius: 100px;
@@ -989,8 +991,10 @@ footer a:hover{
         -moz-border-radius: 100px;
         -ms-border-radius: 100px;
         -o-border-radius: 100px;
-        width: 90%;
+        width: 100%;
     }
+
+
     .section {
         padding: 40px 40px;
     }
@@ -1063,11 +1067,17 @@ footer a:hover{
     #banner {
         height: 30vh;
     }
+
+   
 }
 
 @media (max-width: 447px){
     #header {
         padding: 10px  30px;
+    }
+
+    footer .col{
+        align-items: flex-start;
     }
 
     
@@ -1123,16 +1133,17 @@ footer a:hover{
     }
 
     .carousel-inner h2{
-    margin-top: -600px;
     
     color: black;
     -webkit-text-stroke: 2px white; 
     font-weight: 900; 
     font-size: 30px ;
+    margin-top: 480px;
+    display: block;
     }
 
     .carousel-inner h5{
-        margin-top: 700px;
+        margin-top: 10px;
         color: black;
         -webkit-text-stroke: 2px white; 
         font-weight: 900; 
