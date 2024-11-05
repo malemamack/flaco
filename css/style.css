@@ -282,13 +282,13 @@ body{
 }
 
 #banner h4{
-    color: whit;
+    color: white;
     font-size: 20px;
     font-weight: 800;
 }
 
 #banner h2{
-    color: whit;
+    color: white ;
     font-size: 40px;
     font-weight: 800;
     padding: 10px 0;
@@ -1076,6 +1076,11 @@ footer a:hover{
         padding: 10px  30px;
     }
 
+    #page-header {
+        height: 25vh;
+        
+    }
+
     footer .col{
         align-items: flex-start;
     }
@@ -1102,6 +1107,13 @@ footer a:hover{
     #banner{
         height: 30vh;
         width: 100%;
+    }
+
+    #banner h2 {
+        color: white;
+        font-size: 20px;
+        font-weight: 800;
+        padding: 10px 0;
     }
 
 
